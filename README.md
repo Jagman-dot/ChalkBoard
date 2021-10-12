@@ -3,7 +3,7 @@
 
 ## Site Map
 
-Here is how we invision the layout of chalkboard. Site was created using an online resouce, LucidCharts.
+Here is how we invision the layout of chalkboard. SiteMap was created using an online resouce, LucidCharts.
 
 ![sitemap](Images/site_map.png)
 

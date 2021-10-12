@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e4367f-6de8-493b-beb0-37a3f9644bca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Home_Page.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resgration.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Student_Page.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site_map.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin_Page.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Admin_Page.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home_Page.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Home_Page.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Professor_page.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Professor_page.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resgration.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Resgration.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student_Page.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Student_Page.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_map.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/site_map.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -45,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633971780614</updated>
       <workItem from="1633971785187" duration="519000" />
-      <workItem from="1634007853870" duration="1303000" />
+      <workItem from="1634007853870" duration="1819000" />
     </task>
     <servers />
   </component>

@@ -15,7 +15,10 @@ All of the below wireframes were hand drawn using an Ipad.
 ![Homepage](Images/Home_Page.jpeg)
 ![Regisration](Images/Resgration.jpeg)
 ![Student](Images/Student_Page.jpeg)
+![StudentCourseSearch](Images/Student_Course_search.jpg)
 ![Professor](Images/Professor_page.jpeg)
+![ProfessorRoster](Images/Professor_Roster.jpg)
+![ProfessorCourseCreation](Images/ProfessorCourseCreation.jpg)
 ![Admin](Images/Admin_Page.jpeg)
 
 

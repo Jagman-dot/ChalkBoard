@@ -1,5 +1,7 @@
 # ChalkBoard
 
+Please visit our website here:
+https://jagman-dot.github.io/ChalkBoard/
 
 ## Site Map
 

@@ -3,6 +3,10 @@
 Please visit our website here:
 https://jagman-dot.github.io/ChalkBoard/
 
+#Team Memebers
+* Jagmandeep Dhaliwal
+* Mario Mamtsaderis
+
 ## Site Map
 
 Here is how we invision the layout of chalkboard. SiteMap was created using an online resouce, LucidCharts.

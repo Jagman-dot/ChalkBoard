@@ -3,7 +3,7 @@
 Please visit our website here:
 https://jagman-dot.github.io/ChalkBoard/
 
-#Team Memebers
+# Team Memebers
 * Jagmandeep Dhaliwal
 * Mario Mamtsaderis
 

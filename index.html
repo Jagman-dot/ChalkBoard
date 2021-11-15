@@ -1,39 +1,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Classroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="./html/chalkboard.jpeg" alt="logo" height="200" width="200">
-        <p>Current Date and Time is <span id='date-time'></span>.</p>
-    </header>
-    <main>
+<header>
+
+        <img alt="logo" height="200" src="./html/chalkboard.jpeg" width="400">
+
+    <p>Current Date and Time is <span id='date-time'></span>.</p>
+</header>
+<main>
+    <div class="login">
         <h1>Login</h1>
         <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <div class="user">
+            <label><b>Username</b></label>
+            <input name="uname" placeholder="Enter Username" required type="text">
+            </div>
+            <div class="pass">
+                <label><b>Password</b></label>
+                <input class="psw" name="psw" placeholder="Enter Password" required type="password">
+            </div>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <button id="loginButton" type="submit">Login</button>
 
-            <button type="submit">Login</button>
-            <nav>
-                <a href="#">FORGOT USERNAME?</a> |
-                <a href="#">FORGOT PASSWORD?</a> |
+            <div id="formFooter">
+                <a href="#">FORGOT USERNAME</a> |
+                <a href="#">FORGOT PASSWORD</a>
+                <div>
                 <a href="#">REGISTER</a>
-              </nav>
-    </main>
-    <footer>
-        <h1>Footer Links</h1>
-        <nav>
-            <a href="#">Link</a> |
-            <a href="#">Link</a> |
-            <a href="#">Link</a> |
-            <a href="#">Link</a>
-          </nav>
-    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer id="footer">
+    <h1>Footer Links</h1>
+    <nav>
+        <a href="#">Contact Us</a> |
+        <a href="#">FAQ</a> |
+        <a href="#">Campus Hours</a> |
+        <a href="#">Place Holder</a>
+    </nav>
+</footer>
 </body>
 </html>

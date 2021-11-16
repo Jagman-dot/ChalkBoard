@@ -6,7 +6,11 @@ body{
 }
 
 img{
-
+    -webkit-border-radius: 0 0 0 0;
+    -webkit-box-shadow: 0 15px 30px 0;
+    background: lightgrey;
+    border-radius: 40px;
+    padding: 3px;
 }
 
 p{
@@ -31,8 +35,10 @@ p{
     color: white;
     font-size: 20px;
     border: 1px solid #13619f;
+    border-radius: 5px;
     background: #2371b7;
     width: 125px;
+    height: 40px;
 }
 
 #formFooter{
@@ -41,7 +47,7 @@ p{
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
     margin-top: 20px;
     align-items: center;
 }
@@ -67,34 +73,16 @@ footer{
     padding: 60px 0;
 }
 
-/*@media screen and (min-width:750px ) {*/
-/*    header, footer {*/
-/*        text-align: center;*/
-/*    }*/
-/*    .project-item img{*/
-/*        float:left;*/
-/*        margin-right: 20px;*/
-/*    }*/
-/*    .job-item{*/
-/*        display: grid;*/
-/*        grid-template-columns: 1fr 2fr;*/
-/*        column-gap: 20px;*/
-/*    }*/
-/*    .contact-list {*/
-/*        display:flex;*/
-/*        justify-content: center;*/
-/*    }*/
-/*}*/
-/*@media screen and (max-width:749px ) {*/
-/*    h1 {*/
-/*        font-size: 75px;*/
-/*        line-height: 0.9;*/
-/*        margin-bottom: 20px;*/
-/*    }*/
-/*    h2 {*/
-/*        line-height: 1;*/
-/*    }*/
-/*    .contact-list a {*/
-/*        padding: 5px;*/
-/*    }*/
-/*}*/
+.link:hover{
+    background-color: grey;
+}
+
+#loginButton:hover {
+    background-color: grey;
+}
+
+#loginButton:active {
+    background-color: lightblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(1px);
+}

@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9e4367f-6de8-493b-beb0-37a3f9644bca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/html/signupPage/signup_styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signupPage/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/studentHomePage/studentHomePage_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/studentHomePage/studentHomePage_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +14,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1zMxVNlbFQZ1PxHMLWB5AkZSu3l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -63,7 +68,7 @@
       <workItem from="1637006854293" duration="6920000" />
       <workItem from="1637087404333" duration="3954000" />
       <workItem from="1637288448374" duration="35647000" />
-      <workItem from="1637335629061" duration="2624000" />
+      <workItem from="1637335629061" duration="2837000" />
     </task>
     <servers />
   </component>

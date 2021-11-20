@@ -13,9 +13,9 @@
 <body>
 <header>
 
+    <!--suppress HtmlUnknownTarget -->
     <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_au98facn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-
-    <p>Current Date and Time is <span id='date-time'></span>.</p>
+    <p>Current Date and Time is <span id='date'></span>.</p>
 </header>
 <main>
     <div class="login">
@@ -23,11 +23,15 @@
         <div class="container">
             <div class="user">
             <label><b>Username</b></label>
-            <input name="uname" placeholder="Enter Username" required type="text">
+                <label>
+                    <input name="uname" placeholder="Enter Username" required type="text">
+                </label>
             </div>
             <div class="pass">
                 <label><b>Password</b></label>
-                <input class="psw" name="psw" placeholder="Enter Password" required type="password">
+                <label>
+                    <input class="psw" name="psw" placeholder="Enter Password" required type="password">
+                </label>
             </div>
 
             <button id="loginButton" type="submit">Login</button>
@@ -43,7 +47,7 @@
     </div>
 </main>
 <footer id="footer">
-    <h1>Footer Links</h1>
+    <h1>Chalk Board</h1>
     <nav>
         <a class="link" href="#">Contact Us</a> |
         <a class="link" href="#">FAQ</a> |

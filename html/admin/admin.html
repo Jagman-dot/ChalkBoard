@@ -7,16 +7,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <header>
-        <img src="" alt="logo">
-        <p>Welcome Admin</p>
-        <br>
-        <p>Current Date and Time is <span id='date-time'></span>.</p>
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_9iugpxgj.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+        <p id="admin">Welcome Admin: </p>
+        <p id="date">Today's Date and time: </p>
     </header>
     <main>
-        <label for="searchBox"><b>Search</b></label>
+        <label for="searchBox"><b></b></label>
             <input id="searchBox" type="text" placeholder="Search for students,courses,instructors" name="search" size="40" required>
             <button id="submitButton" type="submit">Submit</button>
             <h2>Students</h2>

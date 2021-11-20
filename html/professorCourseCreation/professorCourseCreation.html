@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="professorCourseCreation_styles.css" rel="stylesheet">
+</head>
+<body>
+    <img alt="logo" height="200" src="./html/chalkboard.jpeg" width="400">
+    <div class="container">
+<h1>Course Creation</h1>
+<p>Please fill in this form to create a course.</p>
+<hr>
+<div class="loginSection">
+    <label for="course"><b>Course Name: </b></label>
+    <input type="text" placeholder="course Name" name="course" required>
+
+    <div>
+        <label for="roster"><b>Roster Size: </b></label>
+        <select name="roster" id="roster">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="professor"><b>Add Professor</b></label>
+        <input type="text" placeholder="professor" name="professor" required>
+    </div>
+
+    <label for="courseEnd"><b>Course End Date: </b></label>
+    <input type="text" placeholder="MM/DD/YYYY" name="courseEnd" required>
+
+    <div>
+        <label for="myfile"><b>Resources:</b> </label>
+        <input type="file" id="myfile" name="myfile" multiple><br><br>
+    </div>
+
+    <div>
+        <button type="button">Create Course</button>
+    </div>
+        </div>
+        </div>
+<footer>
+    <h1>Footer</h1>
+    <nav>
+        <a href="#">Contact Us</a> |
+        <a href="#">FAQ</a> |
+        <a href="#">Campus Hours</a> |
+        <a href="#">Placeholder</a>
+    </nav>
+</footer>
+
+</body>
+</html>

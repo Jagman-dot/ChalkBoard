@@ -33,22 +33,68 @@ p{
     text-align: right;
     margin-right: 40px;
 }
-#roster {
+#students {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
 
-  #roster td, #roster th {
+  #students td, #students th {
     border: 1px solid #ddd;
     padding: 8px;
   }
 
-  #roster tr:nth-child(even){background-color: #f2f2f2;}
+  #students tr:nth-child(even){background-color: #f2f2f2;}
 
-  #roster tr:hover {background-color: #ddd;}
+  #students tr:hover {background-color: #ddd;}
 
-  #roster th {
+  #students th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #instructors {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #instructors td, #instructors th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #instructors tr:nth-child(even){background-color: #f2f2f2;}
+
+  #instructors tr:hover {background-color: #ddd;}
+
+  #instructors th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #courses {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #courses td, #courses th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #courses tr:nth-child(even){background-color: #f2f2f2;}
+
+  #courses tr:hover {background-color: #ddd;}
+
+  #courses th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

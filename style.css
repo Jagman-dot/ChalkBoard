@@ -39,6 +39,7 @@ p{
     background: #2371b7;
     width: 125px;
     height: 40px;
+    cursor: pointer;
 }
 
 #formFooter{

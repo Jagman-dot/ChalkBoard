@@ -1,99 +1,95 @@
 <!DOCTYPE html>
-<!--suppress HtmlUnknownTarget -->
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="signup_styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="signup_styles.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Registration</title>
+
 </head>
-<body>
-
-<header>
-    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_bjyiojos.json" background="transparent" speed="1"
-                   style="width: 600px; height: 300px;" loop autoplay></lottie-player>
-</header>
-
-<div class="form">
-
-
-    <div class="title">Sign Up</div>
-    <div class="subtitle">Let's create your account!</div>
-
-    <div class="input-container ic1">
-
-        <input class="input" type="text" placeholder=" " id="firstName" name="firstName" required/>
-        <div class="cut"></div>
-        <label for="firstName" class="placeholder">First Name</label>
-
-    </div>
-
-
-    <div class="input-container ic2">
-        <input class="input" type="text" placeholder=" " id="lastname" name="lastname" required/>
-        <div class="cut"></div>
-        <label for="lastname" class="placeholder">Last name</label>
-    </div>
-
-
-    <div class="input-container ic2">
-        <input class="input" type="text" placeholder=" " id="email" name="email" required/>
-        <div class="cut cut-short"></div>
-        <label for="email" class="placeholder">Email</label>
-    </div>
-
-    <div class="input-container ic2">
-        <input class="input" type="password" placeholder=" " id="psw" name="psw" required/>
-        <div class="cut"></div>
-        <label for="psw" class="placeholder">Password</label>
-    </div>
-
-    <div class="input-container ic2">
-        <input class="input" type="password" placeholder=" " id="psw-repeat" name="psw-repeat" required/>
-        <div class="cut-long"></div>
-        <label for="psw-repeat" class="placeholder">Repeat Password</label>
-    </div>
-
-    <div class="footer">
-        <p>Are you: </p>
-
-        <div class="role">
-
-            <label>
-                <select>
-                    <option value="student">Student</option>
-                    <option value="professor">Professor</option>
-                </select>
-            </label>
-
-        </div>
-        <div class="terms">
-            <label for="terms">By signing up you agree to the following terms: </label>
-            <input type="checkbox" checked="checked" id="terms" name="terms">
-        </div>
-
-    </div>
-    <div>
-        <button type="submit" class="submit"><b>Submit</b></button>
-    </div>
-</div>
-
+<body class="container">
 <div>
-    <footer>
-        <h1>Chalk Board</h1>
-        <nav>
-            <a class="link" href="#">Contact Us</a> |
-            <a class="link" href="#">FAQ</a> |
-            <a class="link" href="#">Campus Hours</a> |
-            <a class="link" href="#">Place Holder</a>
-        </nav>
+    <a href="../../index.html"><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_bjyiojos.json" background="transparent" speed="1"
+                   style="width: 400px; height: 300px;" loop autoplay></lottie-player>
+    </a>
+</div>
+<main class="container" style="width: 600px;">
+    <form>
+        <div class="pt-4"><h3>Sign Up</h3></div>
+        <div><h4>Let's create your account!</h4></div>
+
+        <hr>
+
+        <div class="form-floating floatingFirst mt-3 mb-3">
+            <input class="form-control rounded-pill" type="text" placeholder=" " id="floatingFirst" name="firstName" required/>
+            <label for="floatingFirst">First Name</label>
+        </div>
+
+        <div class="form-floating floatingLast mt-3">
+            <input class="form-control rounded-pill" type="text" placeholder=" " id="floatingLast" name="lastname" required/>
+            <label for="floatingLast">Last Name</label>
+        </div>
+
+
+        <div class="form-floating floatingEmail ml-5">
+            <input class="form-control rounded-pill" type="email" id="floatingEmail" name="email" placeholder=" " required/>
+            <label for="floatingEmail">Email</label>
+
+        </div>
+
+        <div class="form-floating floatingPass mt-3">
+
+            <input placeholder=" " class="form-control rounded-pill" type="password" id="floatingPass" name="psw" required/>
+            <label for="floatingPass">Password</label>
+        </div>
+
+            <div class="form-floating floatingPsw rounded-pill">
+            <input aria-describedby="passwordHelpInline" class="form-control rounded-pill" type="password" placeholder=" "
+                   id="floatingPsw" name="psw-repeat" required/>
+            <label for="floatingPsw">Repeat Password: </label>
+        </div>
+
+        <div>
+            <select id="role" style="width: 200px" class="form-select role mb-3 rounded-pill mt-3" aria-label="Default select example">
+                <option value="0" selected>Select your Role:</option>
+                <option value="1">Student</option>
+                <option value="2">Professor</option>
+            </select>
+        </div>
+
+        <hr>
+        <div>
+            <button type="submit" class="submit btn btn-primary rounded-pill"><b>Sign Up</b></button>
+        </div>
+    </form>
+</main>
+
+<div class="container">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+        </ul>
+        <p class="text-center">&copy; 2021 ChalkBoard, Inc</p>
     </footer>
 </div>
+
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

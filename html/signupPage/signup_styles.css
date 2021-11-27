@@ -44,6 +44,11 @@ button{
     margin: 0 auto;
 }
 
+li:hover{
+    background-color: white;
+    text-decoration: underline;
+}
+
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;

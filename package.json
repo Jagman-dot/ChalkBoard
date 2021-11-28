@@ -1,0 +1,20 @@
+{
+  "name": "chalkboard",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jagman-dot/ChalkBoard.git"
+  },
+  "author": "Jagmandeep Dhaliwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jagman-dot/ChalkBoard/issues"
+  },
+  "homepage": "https://github.com/Jagman-dot/ChalkBoard#readme"
+}
+git

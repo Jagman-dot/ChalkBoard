@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const passwordHash = require('password-hash');
 
-
+const PORT = process.env.PORT || 3000;
 
 app.set('view-engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -43,4 +43,6 @@ app.post('/register', async (req, res) => {
     console.log(users)
 })
 
-app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});

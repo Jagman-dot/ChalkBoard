@@ -71,6 +71,7 @@ footer{
 
 .link:hover{
     background-color: grey;
+    cursor:pointer;
 }
 
 #loginButton:hover {

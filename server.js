@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+const PORT = process.env.PORT || 5000;
 
 app.set('view-engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -41,4 +42,4 @@ app.post('/register', async (req, res) => {
     console.log(users)
 })
 
-app.listen(3000)
+app.listen(PORT);

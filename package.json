@@ -1,8 +1,9 @@
 {
   "name": "chalkboard",
   "version": "1.0.0",
-  "description": "<<<<<<< HEAD",
+  "description": "",
   "scripts": {
+    "start": "node server.js",
     "devStart": "nodemon server.js"
   },
   "repository": {

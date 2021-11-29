@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const bcrypt = require('bcrypt');
-const PORT = process.env.PORT || 5000;
+const passwordHash = require('password-hash');
+
+
 
 app.set('view-engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -26,7 +27,7 @@ app.get('/register', (req,res)=>{
 app.post('/register', async (req, res) => {
 
     try {
-        const hashedPassword = await bcrypt.hash(req.body.psw, 10);
+        let hashedPassword = passwordHash.generate(req.body.psw);
         users.push({
             id: Date.now().toString(),
             firstName: req.body.firstName,
@@ -42,4 +43,4 @@ app.post('/register', async (req, res) => {
     console.log(users)
 })
 
-app.listen(PORT);
+app.listen(3000);

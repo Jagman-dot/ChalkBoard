@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b9e4367f-6de8-493b-beb0-37a3f9644bca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,10 @@
       <recent name="$PROJECT_DIR$/html" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ChalkBoard/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -68,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -94,7 +98,8 @@
       <workItem from="1637355349859" duration="10224000" />
       <workItem from="1637765982809" duration="17337000" />
       <workItem from="1637956126493" duration="7548000" />
-      <workItem from="1638041001506" duration="11290000" />
+      <workItem from="1638041001506" duration="11834000" />
+      <workItem from="1638203860641" duration="785000" />
     </task>
     <servers />
   </component>

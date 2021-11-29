@@ -24,7 +24,7 @@ app.get('/register', (req,res)=>{
     res.render('register.ejs');
 })
 
-app.post('/register', async (req, res) => {
+app.post('/register', (req, res) => {
 
     try {
         let hashedPassword = passwordHash.generate(req.body.psw);

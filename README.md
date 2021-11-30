@@ -8,12 +8,29 @@ https://chalkboardio.herokuapp.com/
 If you would like to run the app locally testing, please do the following steps
 
 ### Clone this repo
-> git clone https://github.com/Jagman-dot/ChalkBoard.git
+`git clone https://github.com/Jagman-dot/ChalkBoard.git`
 
+### Install Heroku CLI
+`brew tap heroku/brew && brew install heroku`
 
+To confirm, Heroku has been installed correctly enter `heroku` and heroku should start.
 
-Please visit our website here:
-https://jagman-dot.github.io/ChalkBoard/
+### Install MongoDB
+`https://www.mongodb.com/try/download/community`
+
+To confirm, MongoDB has been installed correctly enter `mongo` and mongo server should start.
+
+### To install all project dependencies
+
+`npm install`
+
+### To run locally
+
+`heroku local web`
+
+You should see the following output in the console and the server should be started locally  
+
+![local](Images/local%20web.png)
 
 # Team Memebers
 * Jagmandeep Dhaliwal

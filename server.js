@@ -1,6 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const Form = require('./models/form')
 const app = express();
 const passwordHash = require('password-hash');
+
+mongoose.connect('mongodb://localhost:27017/ChalkBoard').then(()=>{
+    console.log("Connection Open")
+}).catch(err => {
+    console.log("error");
+    console.log(err);
+})
 
 const PORT = process.env.PORT || 3000;
 
@@ -10,18 +19,26 @@ app.use(express.urlencoded({extended: false}))
 
 const users = [];
 
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
 
     res.render("index.ejs");
 
 })
 
-app.get('/login', (req,res)=>{
+app.get('/login', (req, res) => {
     res.render('index.ejs');
 })
 
-app.get('/register', (req,res)=>{
+app.get('/register', (req, res) => {
     res.render('register.ejs');
+})
+
+// this working
+app.get('/user', async (req, res) => {
+    const user = new Form({firstName: 'Jagman', lastName: 'Dhaliwal', email: 'test@gmail.com', passwrod: '123', role: 1});
+    await user.save();
+    res.send(user)
+
 })
 
 app.post('/register', (req, res) => {
@@ -44,5 +61,5 @@ app.post('/register', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+    console.log(`Our app is running on port ${PORT}`);
 });

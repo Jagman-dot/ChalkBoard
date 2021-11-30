@@ -1,7 +1,16 @@
 # ChalkBoard
 
 Our website is being hosted on Heroku, please visit the production site here
-https://www.youtube.com/watch?v=yU7jJ3NbPdA
+https://chalkboardio.herokuapp.com/
+
+## Steps to run locally
+
+If you would like to run the app locally testing, please do the following steps
+
+### Clone this repo
+> git clone https://github.com/Jagman-dot/ChalkBoard.git
+
+
 
 Please visit our website here:
 https://jagman-dot.github.io/ChalkBoard/

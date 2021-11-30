@@ -1,5 +1,16 @@
 # ChalkBoard
-<<<<<<< HEAD
+
+Our website is being hosted on Heroku, please visit the production site here
+https://chalkboardio.herokuapp.com/
+
+## Steps to run locally
+
+If you would like to run the app locally testing, please do the following steps
+
+### Clone this repo
+> git clone https://github.com/Jagman-dot/ChalkBoard.git
+
+
 
 Please visit our website here:
 https://jagman-dot.github.io/ChalkBoard/
@@ -37,4 +48,3 @@ When working on this deliverable, I learned how important wireframes and sitemap
 ## Contributions~ Jagmandeep Dhaliwal
 
 I learned a lot from this one assignment, I learned how from the perspective of a end user, how to design a website that stays in algin with the requirements but also provides ease of use. While planning the site map and wireframes, my partner, and I got exposure of how early stages of web projects are carried out and thought of. WireFrames play a huge role of having a successful product in the future, as it provides initial layouts for the website, and can save you time before you go and start coding randomly. I also got work on github with a partner how coding is done in the real world.
->>>>>>> 486e89d931e73ecc34a9af335f0dc5ecac2747ea

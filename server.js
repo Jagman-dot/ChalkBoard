@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Form = require('./models/form')
+const User = require('./models/form')
 const app = express();
 const passwordHash = require('password-hash');
+const passport = require('passport');
+const LocalStrategy = require('passport-local')
 
 mongoose.connect('mongodb://localhost:27017/ChalkBoard').then(()=>{
     console.log("Connection Open")
@@ -33,13 +35,13 @@ app.get('/register', (req, res) => {
     res.render('register.ejs');
 })
 
-// this working
+//this working
 app.get('/user', async (req, res) => {
-    const user = new Form({firstName: 'Jagman', lastName: 'Dhaliwal', email: 'test@gmail.com', passwrod: '123', role: 1});
+    const user = new User({firstName: 'Jagman', lastName: 'Dhaliwal', email: 'test@gmail.com', password: '123', role: 1});
     await user.save();
-    res.send(user)
+    res.send(user);
 
-})
+});
 
 app.post('/register', (req, res) => {
 

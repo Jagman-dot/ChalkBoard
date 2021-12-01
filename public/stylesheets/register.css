@@ -4,6 +4,7 @@ body {
 }
 
 main{
+    display: flex;
     background-color: #dce8f1;
     height: 500px;
     width: 100%;
@@ -50,11 +51,11 @@ li:hover{
 }
 
 @media screen and (max-width: 400px) {
-    body{
-        font-size: 12px;
-        width: auto;
+    main{
+        flex:auto
     }
 }
+
 
 
 

@@ -51,11 +51,11 @@ li:hover{
 }
 
 @media screen and (max-width: 400px) {
-    main{
-        flex:auto
+    body{
+        font-size: 12px;
+        width: auto;
     }
 }
-
 
 
 

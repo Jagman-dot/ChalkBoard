@@ -99,3 +99,49 @@ li:hover{
 
 }
 
+@media screen and (min-width: 300px){
+
+    main{
+        height: 200%;
+        width: 100%;
+    }
+
+
+    .floatingEmail {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+    }
+
+    button{
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .floatingLast{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+
+    .floatingFirst{
+        display: inline-block;
+    }
+
+    .floatingPass{
+        display: inline-block;
+        margin: 10px auto;
+
+    }
+
+    .floatingPsw{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+    .role{
+        display: block;
+        margin: 0 auto;
+    }
+
+}

@@ -5,7 +5,7 @@ body {
 }
 
 main{
-    background-color: #dce8f1;
+    background-color: whitesmoke;
     display: flex;
     height: 500px;
     width: 100%;
@@ -52,6 +52,9 @@ li:hover{
     text-decoration: underline;
 }
 
+footer {
+    flex: 0 0 90px;
+}
 
 
 

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+ database-setup
     <list default="true" id="b9e4367f-6de8-493b-beb0-37a3f9644bca" name="Changes" comment="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/register.css" afterDir="false" />
+    </list>
+ main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +25,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1zMxVNlbFQZ1PxHMLWB5AkZSu3l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -97,7 +105,7 @@
       <workItem from="1637765982809" duration="17337000" />
       <workItem from="1637956126493" duration="7548000" />
       <workItem from="1638041001506" duration="11834000" />
-      <workItem from="1638203860641" duration="24848000" />
+      <workItem from="1638203860641" duration="28743000" />
     </task>
     <servers />
   </component>

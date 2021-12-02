@@ -1,16 +1,18 @@
 body {
     background-color: #03a9fc;
     font-family: 'Open Sans', sans-serif;
+
 }
 
 main{
+    background-color: whitesmoke;
     display: flex;
-    background-color: #dce8f1;
     height: 500px;
     width: 100%;
     text-align: center;
     -webkit-border-radius: 30px 30px 30px 30px;
     -webkit-box-shadow: 0 30px 60px 0;
+    justify-content: center;
 
 }
 
@@ -50,12 +52,8 @@ li:hover{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 400px) {
-    body{
-        font-size: 12px;
-        width: auto;
-    }
+
+footer {
+    flex: 0 0 90px;
 }
-
-
 

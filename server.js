@@ -3,8 +3,14 @@ const mongoose = require('mongoose');
 const User = require('./models/form')
 const app = express();
 const passwordHash = require('password-hash');
+const morgan = require('morgan');
 const passport = require('passport');
 const LocalStrategy = require('passport-local')
+
+// noinspection JSCheckFunctionSignatures
+app.use(morgan('tiny'));
+
+
 
 mongoose.connect('mongodb://localhost:27017/ChalkBoard').then(()=>{
     console.log("Connection Open")
@@ -38,6 +44,7 @@ app.get('/register', (req, res) => {
 //this working
 app.get('/user', async (req, res) => {
     const user = new User({firstName: 'Jagman', lastName: 'Dhaliwal', email: 'test@gmail.com', password: '123', role: 1});
+    // noinspection JSUnresolvedFunction
     await user.save();
     res.send(user);
 

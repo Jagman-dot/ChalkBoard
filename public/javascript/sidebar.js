@@ -5,3 +5,8 @@
         new bootstrap.Tooltip(tooltipTriggerEl)
     })
 })()
+
+var button = document.getElementById('signOut');
+button.onclick = function() {
+    location.assign('/');
+}

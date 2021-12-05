@@ -1,16 +1,18 @@
 body {
     background-color: #03a9fc;
     font-family: 'Open Sans', sans-serif;
+
 }
 
 main{
+    background-color: whitesmoke;
     display: flex;
-    background-color: #dce8f1;
     height: 500px;
     width: 100%;
     text-align: center;
     -webkit-border-radius: 30px 30px 30px 30px;
     -webkit-box-shadow: 0 30px 60px 0;
+    justify-content: center;
 
 }
 
@@ -50,8 +52,99 @@ li:hover{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 400px){
+
     main{
-        flex:auto
+        height: 200%;
+        width: 100%;
     }
+
+
+    .floatingEmail {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+    }
+
+    button{
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .floatingLast{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+
+    .floatingFirst{
+        display: inline-block;
+    }
+
+    .floatingPass{
+        display: inline-block;
+        margin: 10px auto;
+
+    }
+
+    .floatingPsw{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+    .role{
+        display: block;
+        margin: 0 auto;
+    }
+
 }
+<<<<<<< HEAD
+=======
+
+@media screen and (min-width: 300px){
+
+    main{
+        height: 200%;
+        width: 100%;
+    }
+
+
+    .floatingEmail {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+    }
+
+    button{
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    .floatingLast{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+
+    .floatingFirst{
+        display: inline-block;
+    }
+
+    .floatingPass{
+        display: inline-block;
+        margin: 10px auto;
+
+    }
+
+    .floatingPsw{
+        display: inline-block;
+        margin: 10px auto;
+    }
+
+    .role{
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+>>>>>>> ab924cb60402990a27ffba275bbcf1d9c4a210d1

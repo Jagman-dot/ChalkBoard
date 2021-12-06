@@ -1,12 +1,8 @@
-let button = document.getElementById('login');
+let button = document.getElementById('loginButton');
 button.onclick = function() {
     location.assign('/register');
 }
 
-let button1 = document.getElementById('loginButton');
-button1.onclick = function() {
-    location.assign('/studentHomepage');
-}
 
 const form = document.getElementById('reg-form');
 form.addEventListener('submit', registerUser);

@@ -14,7 +14,8 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 
-mongoose.connect('mongodb://localhost:27017/ChalkBoard', {
+const dbURL = "mongodb+srv://jagman25:Jagman8980@cluster0.v2uag.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=>{

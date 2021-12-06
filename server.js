@@ -2,17 +2,22 @@ const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./models/form')
 const app = express();
-const passwordHash = require('password-hash');
 const morgan = require('morgan');
 const passport = require('passport');
-const LocalStrategy = require('passport-local')
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
 
 // noinspection JSCheckFunctionSignatures
 app.use(morgan('tiny'));
 app.use(express.json());
 
 
-mongoose.connect('mongodb://localhost:27017/ChalkBoard').then(()=>{
+mongoose.connect('mongodb://localhost:27017/ChalkBoard', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(()=>{
     console.log("Connection Open")
 }).catch(err => {
     console.log("error");
@@ -25,14 +30,9 @@ app.set('view-engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: false}))
 
-app.use(passport.initialize());
-//app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 
-
+// routes
 app.get('/', (req, res) => {
 
     res.render("index.ejs");
@@ -44,38 +44,102 @@ app.get('/login', (req, res) => {
 })
 
 
-app.post('/login', passport.authenticate('local', (req, res) =>{
+
+app.post('/login', async (rep,res)=>{
+
+    const {username, password} = rep.body;
 
 
-}));
+    console.log(`finding ${username}`);
+    const user = await User.findOne({username}).lean();
+
+
+    // check to see if we were able to find a user if not then return
+    if(!user){
+        return res.json({
+            status: 'error',
+            error: 'invalid Username / Password',
+        })
+    }
+
+    console.log(`Password is ${password}`);
+
+    // if we were able to find a user then compare to see the password they entered matches the one we have stored
+    if(await bcrypt.compare(password, user.password)){
+
+        const token = jwt.sign(
+            {
+                id: user._id,
+                username: user.username
+            }, JWT_SERECT)
+
+        if(user.role === 1){
+            return res.json({status: "ok", url: "/studentHomepage", data: token})
+        } else if(user.role === 2 ){
+            return res.json({status: "ok", url: "/professorHomepage", data: token})
+        }
+    }
+    res.json({ status: 'error', error: 'Invalid username/password' })
+})
+
+app.get('/studentHomepage', (req,res)=>{
+    res.render('studentHomepage.ejs');
+
+})
+
+// app.post('/register', async (req, res) => {
+//
+//
+//     const {firstName, lastName, username, password: plainTextPassword, role } = req.body;
+//     const password = await bcrypt.hash(plainTextPassword, 10);
+//
+//
+//     const registerUser = await User.create({
+//              firstName,
+//              lastName,
+//              username,
+//              password,
+//              role
+//          });
+//
+//
+//     res.redirect('./login');
+// })
 
 app.get('/register', (req, res) => {
     res.render('register.ejs');
 })
 
+app.post('/register', async (req,res) => {
+    //console.log(req.body);
 
-app.get('/studentHomepage', (req,res)=>{
-    res.render('studentHomepage.ejs');
+    const {firstName, lastName, username, password: plainTextPassword, role } = req.body;
 
-    // grab student first name
-    // change the inner text to firstname for #dropdownUser1
+    const password = await bcrypt.hash(plainTextPassword, 10);
 
-})
+    try{
+       const response = await User.create({
+            firstName,
+            lastName,
+            username,
+            password,
+            role
+        })
 
-app.post('/register', async (req, res) => {
+        console.log('User created successfully: ' + response);
 
+    } catch (error){
+        if(error.code === 11000){
+            return res.json({
+                status: 'error',
+                error: 'Username already in use'
+            })
+        } else{
+            throw error;
+        }
+    }
 
-    const {firstName, lastName, username, psw, role } = req.body;
-
-    const user = new User({firstName, lastName, username, role});
-
-    console.log(psw);
-    const registerUser = await User.register(user, psw);
-
-    console.log(registerUser);
-    res.redirect('./login');
-
-
+    res.json({status: "ok", url: "/login"})
 })
 
 app.listen(PORT, () => {

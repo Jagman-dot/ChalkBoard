@@ -14,7 +14,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 
-const dbURL = "mongodb+srv://jagman25:Jagman8980@cluster0.v2uag.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const dbURL = "mongodb+srv://Jagman25:Jagman8980@chalkboard.kitgo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true

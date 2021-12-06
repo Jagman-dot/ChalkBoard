@@ -63,7 +63,10 @@
 </footer>
 <script>
 
-
+    let button = document.getElementById('login');
+    button.onclick = function() {
+        location.assign('/register');
+    }
 
     const form = document.getElementById('login')
     form.addEventListener('submit', login)

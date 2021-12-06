@@ -1,7 +1,4 @@
-let button = document.getElementById('loginButton');
-button.onclick = function() {
-    location.assign('/register');
-}
+
 
 
 const form = document.getElementById('reg-form');

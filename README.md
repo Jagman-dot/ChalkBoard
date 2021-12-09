@@ -28,9 +28,23 @@ To confirm, MongoDB has been installed correctly enter `mongo` and mongo server 
 
 `heroku local web`
 
-You should see the following output in the console and the server should be started locally  
+You should see the following output in the console and the server should be started locally
 
 ![local](Images/local%20web.png)
+
+## Functionality
+
+### Student
+
+Student is able to register, login, and search for courses. A student may also view and complete an assignment as well as view current grade in the course.
+
+### Professor
+
+Professor is able to create a course, grade an assignment, and view roster of a class. A professor may also search for a student of a class by searching for either a name, e-mail, or student id.
+
+### Admin
+
+Admin is able to view detailed information about a student or professor from a course.
 
 # Team Memebers
 * Jagmandeep Dhaliwal

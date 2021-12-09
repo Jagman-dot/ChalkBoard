@@ -78,7 +78,7 @@ app.post('/login', async (rep,res)=>{
             return res.json({status: "ok", url: "/studentHomepage", data: token})
         } else if(user.role === 2 ){
             return res.json({status: "ok", url: "/professorHomepage", data: token})
-        } else if (user.role ==3) {
+        } else if (user.role === 3) {
             return res.json({status: "ok", url: "/adminHome", data: token})
         }
     }

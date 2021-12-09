@@ -78,6 +78,8 @@ app.post('/login', async (rep,res)=>{
             return res.json({status: "ok", url: "/studentHomepage", data: token})
         } else if(user.role === 2 ){
             return res.json({status: "ok", url: "/professorHomepage", data: token})
+        } else if (user.role ==3) {
+            return res.json({status: "ok", url: "/adminHome", data: token})
         }
     }
     res.json({ status: 'error', error: 'Invalid username/password' })
@@ -88,28 +90,14 @@ app.get('/studentHomepage', (req,res)=>{
 
 })
 
-// app.post('/register', async (req, res) => {
-//
-//
-//     const {firstName, lastName, username, password: plainTextPassword, role } = req.body;
-//     const password = await bcrypt.hash(plainTextPassword, 10);
-//
-//
-//     const registerUser = await User.create({
-//              firstName,
-//              lastName,
-//              username,
-//              password,
-//              role
-//          });
-//
-//
-//     res.redirect('./login');
-// })
+app.get("/adminHome", (rep, res)=>{
+    res.render("adminHome.ejs");
+})
 
 app.get('/register', (req, res) => {
     res.render('register.ejs');
 })
+
 
 app.post('/register', async (req,res) => {
     //console.log(req.body);

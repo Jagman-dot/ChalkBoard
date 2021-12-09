@@ -6,6 +6,6 @@ const password = async (password)=>{
     console.log(hashedPass)
 }
 
-password("jagman123");
+password("Admin123");
 
 

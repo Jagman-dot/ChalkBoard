@@ -17,7 +17,7 @@
 </head>
 <body class="container">
 <div>
-    <a href="index.ejs"><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_bjyiojos.json" background="transparent" speed="1"
+    <a id="home"><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_bjyiojos.json" background="transparent" speed="1"
                                               style="width: 400px; height: 300px;" loop autoplay></lottie-player>
     </a>
 </div>
@@ -88,6 +88,22 @@
 
 
 <script>
+
+    const home = document.getElementById('home');
+    home.addEventListener('click', async (event)=>{
+
+        event.preventDefault();
+               let result = await fetch('/login',{
+                    method: 'GET',
+                   headers: {
+                       'Content-Type': 'application/json',
+                   }
+                }).then((res) => res.json()).catch(err => console.error('caught error: ', err))
+                console.log(result)
+                window.location.href = result.url;
+
+    })
+
     const form = document.getElementById('reg-form');
     form.addEventListener('submit', function(event){
         event.preventDefault();

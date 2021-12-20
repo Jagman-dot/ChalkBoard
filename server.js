@@ -41,6 +41,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
+
+    res.json({url: "/"});
     res.render('index.ejs');
 })
 
@@ -60,6 +62,7 @@ app.post('/login', async (rep,res)=>{
         return res.json({
             status: 'error',
             error: 'invalid Username / Password',
+            url: "/login"
         })
     }
 

@@ -1,3 +1,4 @@
+
 const bcrypt = require('bcrypt')
 
 
@@ -7,5 +8,3 @@ const password = async (password)=>{
 }
 
 password("Admin123");
-
-

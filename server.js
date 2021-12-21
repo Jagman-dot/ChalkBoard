@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./models/form')
+const Course = require('./models/course');
 const app = express();
 const morgan = require('morgan');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cookieParser = require("cookie-parser");
 
 const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
 
@@ -13,6 +15,7 @@ const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
 app.use(morgan('tiny'));
 app.use(express.json());
 
+app.use(cookieParser());
 
 const dbURL = "mongodb+srv://Jagman25:Jagman8980@chalkboard.kitgo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(dbURL, {
@@ -36,17 +39,40 @@ app.use(express.urlencoded({extended: false}))
 // routes
 app.get('/', (req, res) => {
 
+
     res.render("index.ejs");
 
 })
 
 app.get('/login', (req, res) => {
 
-    res.json({url: "/"});
+
     res.render('index.ejs');
 })
 
+app.get('/courseCreation', (req,res)=>{
+    res.render('professorCourseCreation.ejs')
+})
 
+
+app.post('/courseCreation',async (req, res)=>{
+
+    const {courseName1, rosterSize1, addProfessor1, endDate1} = req.body;
+
+    try{
+        const response = await Course.create({
+            courseName1,
+            rosterSize1,
+            addProfessor1,
+            endDate1
+        })
+        console.log('Course created successfully: ' + response);
+    } catch (error){
+        throw error;
+    }
+    res.json({status: "ok", url: "/professorHomePage"})
+
+})
 
 app.post('/login', async (rep,res)=>{
 
@@ -93,6 +119,10 @@ app.get('/studentHomepage', (req,res)=>{
 
 })
 
+app.get('/professorHomePage', (req, res)=>{
+    res.render('ProfessorHomePage.ejs');
+});
+
 app.get("/adminHome", (rep, res)=>{
     res.render("adminHome.ejs");
 })
@@ -133,6 +163,7 @@ app.post('/register', async (req,res) => {
 
     res.json({status: "ok", url: "/login"})
 })
+
 
 app.listen(PORT, () => {
     console.log(`Our app is running on port ${PORT}`);

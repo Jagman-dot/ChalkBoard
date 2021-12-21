@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 body{
-    width: 100%;
-    height: 100%;
-    background-color: #56baed;
+
+    background-color: #03a9fc;
     font-family: 'Open Sans', sans-serif;
+}
+
+
+main{
+    background-color: whitesmoke;
+    display: flex;
+    height: 500px;
+    width: 80%;
+    text-align: center;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    -webkit-box-shadow: 0 30px 60px 0;
+    justify-content: center;
+
 }
 
 footer{
@@ -19,6 +28,28 @@ footer{
     margin: 0 auto;
     padding: 60px 0;
 }
+
+.courseName{
+    display: inline-block;
+}
+
+.rosterSize{
+    display: inline-block;
+}
+
+.addProfessor{
+    display: inline-block;
+}
+
+.formFileMultiple{
+    display: inline-block;
+}
+
+.endDate{
+    display: inline-block;
+}
+
+
 button{
     color: white;
     font-size: 20px;
@@ -43,23 +74,10 @@ button:active{
     text-align: center;
 }
 
-.loginSection{
-    background-color: white;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 450px;
-    position: relative;
-    -webkit-box-shadow: 0 30px 60px 0;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 50px;
-}
 
-@media screen and (max-width:959px){
+
+@media (min-width: 1400px) {
     .container{
-        width:100%;
+        max-width: 720px;
     }
 }

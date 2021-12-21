@@ -57,25 +57,25 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="./studentHomePage.html" class="nav-link active" aria-current="page">
+                <a class="nav-link active" aria-current="page">
                     <ion-icon class="bi me-2" width="16" height="16" name="home-outline"></ion-icon>
                     Home
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-black">
+                <a class="nav-link text-black">
                     <ion-icon class="bi me-2" width="16" height="16" name="notifications-outline"></ion-icon>
                     Notifications
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-black">
+                <a class="nav-link text-black" id="createCourse">
                     <ion-icon class="bi me-2" width="16" height="16" name="school-outline"></ion-icon>
-                    Courses
+                    Create Course
                 </a>
             </li>
             <li>
-                <a href="../studentSearch/studentSearch.html" class="nav-link text-black">
+                <a class="nav-link text-black">
                     <ion-icon class="bi me-2" width="16" height="16" name="search-outline"></ion-icon>
                     Search Courses
                 </a>
@@ -126,7 +126,17 @@
 
 </main>
 
+<script>
 
+    let button = document.getElementById('createCourse');
+    button.onclick = function(){
+        location.assign('/courseCreation');
+    }
+
+    
+
+
+</script>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

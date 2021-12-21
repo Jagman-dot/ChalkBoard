@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./models/form')
+const Course = require('./models/course');
 const app = express();
 const morgan = require('morgan');
 const passport = require('passport');
@@ -49,7 +50,29 @@ app.get('/login', (req, res) => {
     res.render('index.ejs');
 })
 
+app.get('/courseCreation', (req,res)=>{
+    res.render('professorCourseCreation.ejs')
+})
 
+
+app.post('/courseCreation',async (req, res)=>{
+
+    const {courseName1, rosterSize1, addProfessor1, endDate1} = req.body;
+
+    try{
+        const response = await Course.create({
+            courseName1,
+            rosterSize1,
+            addProfessor1,
+            endDate1
+        })
+        console.log('Course created successfully: ' + response);
+    } catch (error){
+        throw error;
+    }
+    res.json({status: "ok", url: "/professorHomePage"})
+
+})
 
 app.post('/login', async (rep,res)=>{
 

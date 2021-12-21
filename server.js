@@ -36,13 +36,14 @@ app.use(express.urlencoded({extended: false}))
 // routes
 app.get('/', (req, res) => {
 
+    res.json({url: "/"});
     res.render("index.ejs");
 
 })
 
 app.get('/login', (req, res) => {
 
-    res.json({url: "/"});
+
     res.render('index.ejs');
 })
 
@@ -92,6 +93,10 @@ app.get('/studentHomepage', (req,res)=>{
     res.render('studentHomepage.ejs');
 
 })
+
+app.get('/professorHomePage', (req, res)=>{
+    res.render('ProfessorHomePage.ejs');
+});
 
 app.get("/adminHome", (rep, res)=>{
     res.render("adminHome.ejs");

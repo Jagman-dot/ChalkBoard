@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "pre": "rm -rf node_modules package-lock.json && npm install && npm start",
     "start": "node server.js"
   },
   "repository": {

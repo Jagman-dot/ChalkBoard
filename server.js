@@ -4,13 +4,10 @@ const User = require('./models/form')
 const Course = require('./models/course');
 const app = express();
 const morgan = require('morgan');
-const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require("cookie-parser");
-const {token} = require("morgan");
-const e = require("express");
-const {stdout} = require("nodemon/lib/config/defaults");
+
 
 const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
 
@@ -44,10 +41,9 @@ app.use(express.urlencoded({extended: false}))
 
 // Main Page routes
 app.get('/', (req, res) => {
-    res.cookie('jwt', " ", {maxAge: 1})
-    res.cookie('role', " ", {maxAge: 1})
+    res.cookie('jwt', "", {maxAge: 1})
+    res.cookie('role', "", {maxAge: 1})
     res.cookie('firstName', "", {maxAge: 1})
-    res.render('index.ejs');
     res.render("index.ejs");
 })
 

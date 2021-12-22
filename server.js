@@ -8,15 +8,21 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require("cookie-parser");
+const {token} = require("morgan");
+const e = require("express");
+const {stdout} = require("nodemon/lib/config/defaults");
 
 const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
 
-// noinspection JSCheckFunctionSignatures
+//morgan for log requests status in the console
 app.use(morgan('tiny'));
 app.use(express.json());
 
+// cookie parser to read cookies coming from the browser
 app.use(cookieParser());
 
+
+// database set up
 const dbURL = "mongodb+srv://Jagman25:Jagman8980@chalkboard.kitgo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(dbURL, {
     useNewUrlParser: true,
@@ -36,42 +42,16 @@ app.use(express.urlencoded({extended: false}))
 
 
 
-// routes
+// Main Page routes
 app.get('/', (req, res) => {
-
-
     res.render("index.ejs");
-
 })
 
 app.get('/login', (req, res) => {
-
-
+    res.cookie('jwt', " ", {maxAge: 1})
+    res.cookie('role', " ", {maxAge: 1})
+    res.cookie('firstName', "", {maxAge: 1})
     res.render('index.ejs');
-})
-
-app.get('/courseCreation', (req,res)=>{
-    res.render('professorCourseCreation.ejs')
-})
-
-
-app.post('/courseCreation',async (req, res)=>{
-
-    const {courseName1, rosterSize1, addProfessor1, endDate1} = req.body;
-
-    try{
-        const response = await Course.create({
-            courseName1,
-            rosterSize1,
-            addProfessor1,
-            endDate1
-        })
-        console.log('Course created successfully: ' + response);
-    } catch (error){
-        throw error;
-    }
-    res.json({status: "ok", url: "/professorHomePage"})
-
 })
 
 app.post('/login', async (rep,res)=>{
@@ -100,41 +80,39 @@ app.post('/login', async (rep,res)=>{
         const token = jwt.sign(
             {
                 id: user._id,
-                username: user.username
+                username: user.username,
+                firstName: user.firstName,
+                role: user.role
             }, JWT_SERECT)
 
         if(user.role === 1){
-            return res.json({status: "ok", url: "/studentHomepage", data: token})
+            console.log(token)
+
+            res.cookie('jwt', token, {httpOnly: true})
+            res.cookie('role', 1)
+            res.cookie('firstName', user.firstName)
+
+            return res.json({status: "ok", user: user._id, url: "/studentHomepage"})
         } else if(user.role === 2 ){
-            return res.json({status: "ok", url: "/professorHomepage", data: token})
+
+            res.cookie('jwt', token, {httpOnly: true})
+            res.cookie('role', 2)
+            res.cookie('firstName', user.firstName)
+            return res.json({status: "ok", user: user._id, url: "/professorHomepage"})
         } else if (user.role === 3) {
-            return res.json({status: "ok", url: "/adminHome", data: token})
+
+            res.cookie('jwt', token, {httpOnly: true})
+            res.cookie('role', 3)
+            return res.json({status: "ok", user: user._id, url: "/adminHome"})
         }
     }
     res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
-app.get('/studentHomepage', (req,res)=>{
-    res.render('studentHomepage.ejs');
-
-})
-
-app.get('/searchCourses', (req,res)=>{
-    res.render('StudentSearch.ejs');
-
-})
-
-
-
-app.get('/professorHomePage', (req, res)=>{
-    res.render('ProfessorHomePage.ejs');
-});
-
-app.get("/adminHome", (rep, res)=>{
-    res.render("adminHome.ejs");
-})
-
 app.get('/register', (req, res) => {
+    res.cookie('jwt', " ", {maxAge: 1})
+    res.cookie('role', " ", {maxAge: 1})
+    res.cookie('firstName', "", {maxAge: 1})
     res.render('register.ejs');
 })
 
@@ -147,7 +125,7 @@ app.post('/register', async (req,res) => {
     const password = await bcrypt.hash(plainTextPassword, 10);
 
     try{
-       const response = await User.create({
+        const response = await User.create({
             firstName,
             lastName,
             username,
@@ -170,6 +148,123 @@ app.post('/register', async (req,res) => {
 
     res.json({status: "ok", url: "/login"})
 })
+
+
+/*
+* Professor Routes
+*/
+
+app.get('/courseCreation', (req,res)=>{
+    res.render('professorCourseCreation.ejs')
+})
+
+
+app.post('/courseCreation',async (req, res)=>{
+
+    const {courseName1, rosterSize1, addProfessor1, endDate1} = req.body;
+
+    console.log(courseName1)
+    console.log(rosterSize1)
+    console.log(addProfessor1)
+    console.log(endDate1)
+    try{
+        const response = await Course.create({
+            courseName1,
+            rosterSize1,
+            addProfessor1,
+            endDate1
+        })
+        console.log('Course created successfully: ' + response);
+    } catch (error){
+        throw error;
+    }
+    res.json({status: "ok", url: "/professorHomePage"})
+
+})
+
+app.get('/professorHomePage', (req, res)=>{
+
+    const jwtToken = req.cookies.jwt;
+    if(token){
+
+        jwt.verify(jwtToken, JWT_SERECT, (err, decoded)=>{
+            if(err){
+                console.log(err.message)
+                res.redirect('/');
+            } else{
+                console.log(decoded) // debug
+                res.render('ProfessorHomePage.ejs');
+            }
+        })
+
+    } else{
+        res.redirect('/')
+    }
+
+});
+
+
+/*
+* Student Routes
+* */
+app.get('/studentHomepage', (req,res)=>{
+
+    const jwtToken = req.cookies.jwt;
+
+    if(token){
+
+        jwt.verify(jwtToken, JWT_SERECT, (err, decoded)=>{
+            if(err){
+                console.log(err.message)
+                res.redirect('/');
+            } else{
+                console.log(decoded) // debug
+                res.render('studentHomepage.ejs');
+            }
+        })
+
+    } else{
+        res.redirect('/')
+    }
+
+})
+
+app.get('/searchCourses', async (req,res)=>{
+
+    const courses = await Course.find({});
+        console.log(courses)
+    res.render('StudentSearch.ejs', {courses});
+
+})
+
+
+
+
+
+app.get("/adminHome", (rep, res)=>{
+
+    const jwtToken = req.cookies.jwt;
+
+    if(token){
+
+        jwt.verify(jwtToken, JWT_SERECT, (err, decoded)=>{
+            if(err){
+                console.log(err.message)
+                res.redirect('/');
+            } else{
+                console.log(decoded) // debug
+                res.render("adminHome.ejs");
+            }
+        })
+
+    } else{
+        res.redirect('/')
+    }
+
+
+})
+
+
 
 
 app.listen(PORT, () => {

@@ -35,19 +35,12 @@
         <button type="button">Enroll</button>
     </div>
 
-    <table class="table table-striped table-primary">
-        <thead>
-        <tr>
-            <th>Course Name</th>
-            <th>Roster</th>
-            <th>Profesor</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
+   <h2>All Courses</h2>
+    <ul>
+        <% for(let course of courses) {%>
+       <li><%= courses.courseName %> </li>
+        <%}%>
+    </ul>
 </div>
 
 <footer>

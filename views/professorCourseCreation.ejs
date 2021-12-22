@@ -85,6 +85,11 @@
         const endDate1 = document.getElementById('endDate').value;
 
 
+        console.log(courseName1)
+        console.log(rosterSize1)
+        console.log(addProfessor1)
+        console.log(endDate1)
+
         const result = await fetch('/courseCreation', {
             method: 'POST',
             headers: {

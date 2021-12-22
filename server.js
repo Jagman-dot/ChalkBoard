@@ -44,6 +44,10 @@ app.use(express.urlencoded({extended: false}))
 
 // Main Page routes
 app.get('/', (req, res) => {
+    res.cookie('jwt', " ", {maxAge: 1})
+    res.cookie('role', " ", {maxAge: 1})
+    res.cookie('firstName', "", {maxAge: 1})
+    res.render('index.ejs');
     res.render("index.ejs");
 })
 

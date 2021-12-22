@@ -119,6 +119,17 @@ footer{
     justify-content: center;
     align-items: center;
   }
+  @media(min - width: 36 em) {
+    .container-calendar {
+       /* Overrides the above styles on screens larger than 36em */
+    }
+ }
+
+ @media(min - width: 48 em) {
+    .container-calendar{
+       /* Overrides the above styles on screens larger than 48em */
+    }
+ }
 
   .calendar {
     width: 45rem;

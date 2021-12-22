@@ -242,7 +242,7 @@ app.get('/searchCourses', async (req,res)=>{
 
 
 
-app.get("/adminHome", (rep, res)=>{
+app.get("/adminHome", (req, res)=>{
 
     const jwtToken = req.cookies.jwt;
 

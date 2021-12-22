@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require("cookie-parser");
+const {token} = require('morgan');
 
 
 const JWT_SERECT = 'kalsdfjkal;sfjiwejiorjweiorjasdlkfjasdklfjasklf;weoirj';
@@ -48,8 +49,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.cookie('jwt', " ", {maxAge: 1})
-    res.cookie('role', " ", {maxAge: 1})
+    res.cookie('jwt', "", {maxAge: 1})
+    res.cookie('role', "", {maxAge: 1})
     res.cookie('firstName', "", {maxAge: 1})
     res.render('index.ejs');
 })

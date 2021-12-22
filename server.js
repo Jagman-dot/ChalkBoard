@@ -258,7 +258,7 @@ app.get("/adminHome", (rep, res)=>{
         })
 
     } else{
-        res.redirect('/')
+        res.redirect('/');
     }
 
 

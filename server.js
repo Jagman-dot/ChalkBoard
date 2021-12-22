@@ -119,6 +119,13 @@ app.get('/studentHomepage', (req,res)=>{
 
 })
 
+app.get('/searchCourses', (req,res)=>{
+    res.render('StudentSearch.ejs');
+
+})
+
+
+
 app.get('/professorHomePage', (req, res)=>{
     res.render('ProfessorHomePage.ejs');
 });
